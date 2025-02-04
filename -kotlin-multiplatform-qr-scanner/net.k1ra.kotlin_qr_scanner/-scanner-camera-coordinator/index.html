@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ScannerCameraCoordinator</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../index.html">
+                    KotlinMultiplatformQrScanner
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.0.1        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"
+                                       data-filter=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"/>
+                                <span class="checkbox--icon"></span>
+                                ios
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    KotlinMultiplatformQrScanner
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="KotlinMultiplatformQrScanner::net.k1ra.kotlin_qr_scanner/ScannerCameraCoordinator///PointingToDeclaration//68625452">
+  <div class="breadcrumbs"><a href="../../../index.html">KotlinMultiplatformQrScanner</a><span class="delimiter">/</span><a href="../index.html">net.k1ra.kotlin_qr_scanner</a><span class="delimiter">/</span><span class="current">ScannerCameraCoordinator</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Scanner</span><wbr></wbr><span>Camera</span><wbr></wbr><span><span>Coordinator</span></span></h1>
+    <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ScannerCameraCoordinator</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>camera<span class="token operator">: </span><span data-unresolved-link="platform.AVFoundation/AVCaptureDevice///PointingToDeclaration/">AVCaptureDevice</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onScanned<span class="token operator">: </span><span class="token punctuation">(</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="platform.darwin/NSObject///PointingToDeclaration/">NSObject</span>, <span data-unresolved-link="platform.AVFoundation/AVCaptureMetadataOutputObjectsDelegateProtocol///PointingToDeclaration/">AVCaptureMetadataOutputObjectsDelegateProtocol</span></div></div>    </div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="1666616409%2FConstructors%2F68625452" anchor-label="ScannerCameraCoordinator" id="1666616409%2FConstructors%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-scanner-camera-coordinator.html"><span>Scanner</span><wbr></wbr><span>Camera</span><wbr></wbr><span><span>Coordinator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1666616409%2FConstructors%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">camera<span class="token operator">: </span><span data-unresolved-link="platform.AVFoundation/AVCaptureDevice///PointingToDeclaration/">AVCaptureDevice</span><span class="token punctuation">, </span></span><span class="parameter ">onScanned<span class="token operator">: </span><span class="token punctuation">(</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="748818223%2FProperties%2F68625452" anchor-label="camera" id="748818223%2FProperties%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="camera.html"><span><span>camera</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="748818223%2FProperties%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="camera.html">camera</a><span class="token operator">: </span><span data-unresolved-link="platform.AVFoundation/AVCaptureDevice///PointingToDeclaration/">AVCaptureDevice</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="119811396%2FProperties%2F68625452" anchor-label="captureSession" id="119811396%2FProperties%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="capture-session.html"><span>capture</span><wbr></wbr><span><span>Session</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="119811396%2FProperties%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="capture-session.html">captureSession</a><span class="token operator">: </span><span data-unresolved-link="platform.AVFoundation/AVCaptureSession///PointingToDeclaration/">AVCaptureSession</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="228684334%2FProperties%2F68625452" anchor-label="debugDescription" id="228684334%2FProperties%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#228684334%2FFunctions%2F68625452"><span>debug</span><wbr></wbr><span><span>Description</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="228684334%2FProperties%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="../-orientation-listener/index.html#228684334%2FFunctions%2F68625452">debugDescription</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1692238585%2FProperties%2F68625452" anchor-label="description" id="-1692238585%2FProperties%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#-1692238585%2FProperties%2F68625452"><span><span>description</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1692238585%2FProperties%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="../-orientation-listener/index.html#-1692238585%2FProperties%2F68625452">description</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-331073687%2FProperties%2F68625452" anchor-label="hash" id="-331073687%2FProperties%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#-331073687%2FProperties%2F68625452"><span><span>hash</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-331073687%2FProperties%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="../-orientation-listener/index.html#-331073687%2FProperties%2F68625452">hash</a><span class="token operator">: </span><span data-unresolved-link="platform.darwin/NSUInteger///PointingToDeclaration/">NSUInteger</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2074562421%2FProperties%2F68625452" anchor-label="onScanned" id="2074562421%2FProperties%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-scanned.html"><span>on</span><wbr></wbr><span><span>Scanned</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2074562421%2FProperties%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="on-scanned.html">onScanned</a><span class="token operator">: </span><span class="token punctuation">(</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="487587066%2FProperties%2F68625452" anchor-label="superclass" id="487587066%2FProperties%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#487587066%2FProperties%2F68625452"><span><span>superclass</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="487587066%2FProperties%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">val </span><a href="../-orientation-listener/index.html#487587066%2FProperties%2F68625452">superclass</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-obj-c-class/index.html">ObjCClass</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-780232936%2FFunctions%2F68625452" anchor-label="captureOutput" id="-780232936%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="capture-output.html"><span>capture</span><wbr></wbr><span><span>Output</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-780232936%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="capture-output.html"><span class="token function">captureOutput</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">output<span class="token operator">: </span><span data-unresolved-link="platform.AVFoundation/AVCaptureOutput///PointingToDeclaration/">AVCaptureOutput</span><span class="token punctuation">, </span></span><span class="parameter ">didOutputMetadataObjects<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">fromConnection<span class="token operator">: </span><span data-unresolved-link="platform.AVFoundation/AVCaptureConnection///PointingToDeclaration/">AVCaptureConnection</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1148618635%2FFunctions%2F68625452" anchor-label="class" id="1148618635%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1148618635%2FFunctions%2F68625452"><span><span>class</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1148618635%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#1148618635%2FFunctions%2F68625452"><span class="token function">class</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-obj-c-class/index.html">ObjCClass</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1985533118%2FFunctions%2F68625452" anchor-label="conformsToProtocol" id="1985533118%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1985533118%2FFunctions%2F68625452"><span>conforms</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Protocol</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1985533118%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#1985533118%2FFunctions%2F68625452"><span class="token function">conformsToProtocol</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aProtocol<span class="token operator">: </span><span data-unresolved-link="objcnames.classes/Protocol///PointingToDeclaration/">Protocol</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="719895338%2FFunctions%2F68625452" anchor-label="copy" id="719895338%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#719895338%2FFunctions%2F68625452"><span><span>copy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="719895338%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#719895338%2FFunctions%2F68625452"><span class="token function">copy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="228684334%2FFunctions%2F68625452" anchor-label="debugDescription" id="228684334%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#228684334%2FFunctions%2F68625452"><span>debug</span><wbr></wbr><span><span>Description</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="228684334%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#228684334%2FFunctions%2F68625452"><span class="token function">debugDescription</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1692238585%2FFunctions%2F68625452" anchor-label="description" id="-1692238585%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#-1692238585%2FProperties%2F68625452"><span><span>description</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1692238585%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#-1692238585%2FProperties%2F68625452"><span class="token function">description</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-622522961%2FFunctions%2F68625452" anchor-label="doesNotRecognizeSelector" id="-622522961%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#-622522961%2FFunctions%2F68625452"><span>does</span><wbr></wbr><span>Not</span><wbr></wbr><span>Recognize</span><wbr></wbr><span><span>Selector</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-622522961%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#-622522961%2FFunctions%2F68625452"><span class="token function">doesNotRecognizeSelector</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aSelector<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-opaque-pointer/index.html">COpaquePointer</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-776372831%2FFunctions%2F68625452" anchor-label="finalize" id="-776372831%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#-776372831%2FFunctions%2F68625452"><span><span>finalize</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-776372831%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#-776372831%2FFunctions%2F68625452"><span class="token function">finalize</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="870119066%2FFunctions%2F68625452" anchor-label="forwardingTargetForSelector" id="870119066%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#870119066%2FFunctions%2F68625452"><span>forwarding</span><wbr></wbr><span>Target</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Selector</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="870119066%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#870119066%2FFunctions%2F68625452"><span class="token function">forwardingTargetForSelector</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aSelector<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-opaque-pointer/index.html">COpaquePointer</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="895393388%2FFunctions%2F68625452" anchor-label="forwardInvocation" id="895393388%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#895393388%2FFunctions%2F68625452"><span>forward</span><wbr></wbr><span><span>Invocation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="895393388%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#895393388%2FFunctions%2F68625452"><span class="token function">forwardInvocation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">anInvocation<span class="token operator">: </span><span data-unresolved-link="objcnames.classes/NSInvocation///PointingToDeclaration/">NSInvocation</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-331073687%2FFunctions%2F68625452" anchor-label="hash" id="-331073687%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#-331073687%2FProperties%2F68625452"><span><span>hash</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-331073687%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#-331073687%2FProperties%2F68625452"><span class="token function">hash</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="platform.darwin/NSUInteger///PointingToDeclaration/">NSUInteger</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1753155089%2FFunctions%2F68625452" anchor-label="init" id="-1753155089%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#-1753155089%2FFunctions%2F68625452"><span><span>init</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1753155089%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#-1753155089%2FFunctions%2F68625452"><span class="token function"><strike>init</strike></span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="platform.darwin/NSObject///PointingToDeclaration/">NSObject</span><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1389499081%2FFunctions%2F68625452" anchor-label="isEqual" id="1389499081%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1389499081%2FFunctions%2F68625452"><span>is</span><wbr></wbr><span><span>Equal</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1389499081%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#1389499081%2FFunctions%2F68625452"><span class="token function">isEqual</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">object<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1331253070%2FFunctions%2F68625452" anchor-label="isKindOfClass" id="-1331253070%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1331253070%2FFunctions%2F68625452"><span>is</span><wbr></wbr><span>Kind</span><wbr></wbr><span>Of</span><wbr></wbr><span><span>Class</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1331253070%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#-1331253070%2FFunctions%2F68625452"><span class="token function">isKindOfClass</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aClass<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-obj-c-class/index.html">ObjCClass</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="508373484%2FFunctions%2F68625452" anchor-label="isMemberOfClass" id="508373484%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#508373484%2FFunctions%2F68625452"><span>is</span><wbr></wbr><span>Member</span><wbr></wbr><span>Of</span><wbr></wbr><span><span>Class</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="508373484%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#508373484%2FFunctions%2F68625452"><span class="token function">isMemberOfClass</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aClass<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-obj-c-class/index.html">ObjCClass</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1585938017%2FFunctions%2F68625452" anchor-label="isProxy" id="-1585938017%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1585938017%2FFunctions%2F68625452"><span>is</span><wbr></wbr><span><span>Proxy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1585938017%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#-1585938017%2FFunctions%2F68625452"><span class="token function">isProxy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1508216455%2FFunctions%2F68625452" anchor-label="methodForSelector" id="1508216455%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#1508216455%2FFunctions%2F68625452"><span>method</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Selector</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1508216455%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#1508216455%2FFunctions%2F68625452"><span class="token function">methodForSelector</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aSelector<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-opaque-pointer/index.html">COpaquePointer</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="platform.darwin/IMP///PointingToDeclaration/">IMP</span><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1366135821%2FFunctions%2F68625452" anchor-label="methodSignatureForSelector" id="1366135821%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#1366135821%2FFunctions%2F68625452"><span>method</span><wbr></wbr><span>Signature</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Selector</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1366135821%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#1366135821%2FFunctions%2F68625452"><span class="token function">methodSignatureForSelector</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aSelector<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-opaque-pointer/index.html">COpaquePointer</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="objcnames.classes/NSMethodSignature///PointingToDeclaration/">NSMethodSignature</span><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1810377952%2FFunctions%2F68625452" anchor-label="mutableCopy" id="1810377952%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#1810377952%2FFunctions%2F68625452"><span>mutable</span><wbr></wbr><span><span>Copy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1810377952%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#1810377952%2FFunctions%2F68625452"><span class="token function">mutableCopy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="377004481%2FFunctions%2F68625452" anchor-label="onFound" id="377004481%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-found.html"><span>on</span><wbr></wbr><span><span>Found</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="377004481%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="on-found.html"><span class="token function">onFound</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">code<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="587873657%2FFunctions%2F68625452" anchor-label="performSelector" id="587873657%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1648478520%2FFunctions%2F68625452"><span>perform</span><wbr></wbr><span><span>Selector</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="587873657%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#1648478520%2FFunctions%2F68625452"><span class="token function">performSelector</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aSelector<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-opaque-pointer/index.html">COpaquePointer</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#1022285147%2FFunctions%2F68625452"><span class="token function">performSelector</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aSelector<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-opaque-pointer/index.html">COpaquePointer</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">withObject<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#1012122878%2FFunctions%2F68625452"><span class="token function">performSelector</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aSelector<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-opaque-pointer/index.html">COpaquePointer</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">withObject<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">_withObject<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2057013847%2FFunctions%2F68625452" anchor-label="prepare" id="-2057013847%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="prepare.html"><span><span>prepare</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2057013847%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="prepare.html"><span class="token function">prepare</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">layer<span class="token operator">: </span><span data-unresolved-link="platform.QuartzCore/CALayer///PointingToDeclaration/">CALayer</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="895390012%2FFunctions%2F68625452" anchor-label="respondsToSelector" id="895390012%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#895390012%2FFunctions%2F68625452"><span>responds</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Selector</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="895390012%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="index.html#895390012%2FFunctions%2F68625452"><span class="token function">respondsToSelector</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">aSelector<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-opaque-pointer/index.html">COpaquePointer</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1027491282%2FFunctions%2F68625452" anchor-label="setCurrentOrientation" id="-1027491282%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-current-orientation.html"><span>set</span><wbr></wbr><span>Current</span><wbr></wbr><span><span>Orientation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1027491282%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="set-current-orientation.html"><span class="token function">setCurrentOrientation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newOrientation<span class="token operator">: </span><span data-unresolved-link="platform.UIKit/UIDeviceOrientation///PointingToDeclaration/">UIDeviceOrientation</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-966674403%2FFunctions%2F68625452" anchor-label="setFrame" id="-966674403%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-frame.html"><span>set</span><wbr></wbr><span><span>Frame</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-966674403%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="set-frame.html"><span class="token function">setFrame</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">rect<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-c-value/index.html">CValue</a><span class="token operator">&lt;</span><span data-unresolved-link="platform.CoreGraphics/CGRect///PointingToDeclaration/">CGRect</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="487587066%2FFunctions%2F68625452" anchor-label="superclass" id="487587066%2FFunctions%2F68625452" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-orientation-listener/index.html#487587066%2FProperties%2F68625452"><span><span>superclass</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="487587066%2FFunctions%2F68625452"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-filterable-set=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain" data-active="" data-toggle=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":KotlinMultiplatformQrScanner:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="../-orientation-listener/index.html#487587066%2FProperties%2F68625452"><span class="token function">superclass</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlinx.cinterop/-obj-c-class/index.html">ObjCClass</a><span class="token operator">?</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
