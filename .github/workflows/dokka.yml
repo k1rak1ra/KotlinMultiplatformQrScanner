@@ -20,7 +20,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build documentation
-        run: ./gradlew KotlinQrScanner:dokkaHtml
+        run: ./gradlew KotlinMultiplatformQrScanner:dokkaHtml
         env:
           releaseName: ${{ github.event.release.name }}
 
@@ -31,4 +31,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           BRANCH: gh-pages
-          FOLDER: ${{ github.workspace }}/KotlinQrScanner/build/dokka/html/
+          FOLDER: ${{ github.workspace }}/KotlinMultiplatformQrScanner/build/dokka/html/

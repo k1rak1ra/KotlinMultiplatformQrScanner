@@ -24,7 +24,7 @@ jobs:
           xcode-version: latest-stable
 
       - name: Publish
-        run: ./gradlew KotlinQrScanner:publish
+        run: ./gradlew KotlinMultiplatformQrScanner:publish
         env:
           releaseName: ${{ github.event.release.name }}
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
