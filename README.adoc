@@ -1,0 +1,16 @@
+= KotlinMultiplatformQrScanner
+
+
+Kotlin Multiplatform QR code scanner
+
+
+Reconstructed source code for https://github.com/Chaintech-Network/QRKitComposeMultiplatform, due to their refusal to release their source despite claiming it is MIT-licensed
+
+
+Removed stolen QR generator code (Use the original: https://github.com/alexzhirkevich/qrose)
+
+
+Added image picker support for wasmJs (Maybe if the original code was actually released publicly, I could’ve just contributed to it directly instead!)
+
+
+Refer to original code for documentation
