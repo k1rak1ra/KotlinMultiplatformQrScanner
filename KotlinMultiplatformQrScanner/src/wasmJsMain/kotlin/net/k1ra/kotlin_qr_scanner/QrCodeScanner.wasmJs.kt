@@ -51,9 +51,8 @@ actual fun scanImage(
             onCompletion.invoke(it.toString())
             null
         }.catch {
-            it as Event
             document.body?.removeChild(div)
-            onFailure.invoke(it.type.toString())
+            onFailure.invoke(it.toString())
             null
         }
 
